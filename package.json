@@ -1,53 +1,60 @@
 {
-  "name": "@markpieszak/ng-application-insights",
-  "description": "Microsoft Azure Application Insights for Angular - Brought to you by Trilon.io",
-  "version": "8.0.1",
+  "name": "angular-application-insights-v2",
+  "description": "Angular implementation for Microsoft Azure Application Insights Javascript SDK V2",
+  "version": "0.0.1",
   "scripts": {
     "lint": "tslint -p tsconfig.json",
     "clean": "rimraf ./dist",
     "clean.install": "rimraf ./dist ./package-lock.json && npm i",
     "build": "npm run clean && npm run tsc && ngc",
+    "test": "ng test",
     "tsc": "tsc",
     "angular:update": "ng update @angular/cli && ng update @angular/{common,compiler,core,forms,platform-browser,platform-browser-dynamic,router"
   },
-  "homepage": "https://trilon.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TrilonIO/angular-application-insights"
+    "url": "https://github.com/tamilvasan/angular-application-insights-v2"
   },
   "author": {
-    "name": "Mark Pieszak | Trilon Consulting",
-    "email": "hello@trilon.io",
-    "url": "https://trilon.io"
+    "name": "Sreenivasan",
+    "email": "eshock.vasan@gmail.com",
+    "url": "https://www.bitiniyan.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TrilonIO/angular-application-insights/issues"
+    "url": "https://github.com/tamilvasan/angular-application-insights-v2/issues"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "applicationinsights-js": "^1.0.20",
-    "@types/applicationinsights-js": "^1.0.9"
-  },
-  "peerDependencies": {
-    "rxjs": "^6.1.0",
-    "@angular/router": "^8.0.0 || ^9.0.0-0"
+    "@angular/common": "^8.2.5",
+    "@angular/core": "^8.2.5",
+    "@angular/platform-browser": "^8.2.5",
+    "@angular/platform-browser-dynamic": "^8.2.5",
+    "@angular/router": "^8.2.5",
+    "@microsoft/applicationinsights-web": "^2.2.2",
+    "rxjs": "^6.5.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.1",
-    "@angular/cli": "^8.0.0 || ^9.0.0-0",
-    "@angular/common": "^8.0.0 || ^9.0.0-0",
-    "@angular/compiler": "^8.0.0 || ^9.0.0-0",
-    "@angular/compiler-cli": "^8.0.0 || ^9.0.0-0",
-    "@angular/core": "^8.0.0 || ^9.0.0-0",
-    "@angular/platform-browser": "^8.0.0 || ^9.0.0-0",
-    "@angular/router": "^8.0.0 || ^9.0.0-0",
-    "codelyzer": "^4.5.0",
-    "rimraf": "^2.6.2",
-    "rxjs": "^6.1.0",
-    "tslint": "^5.7.0",
-    "typescript": "3.4.5",
+    "@angular-devkit/build-angular": "^0.801.3",
+    "@angular/cli": "^8.3.3",
+    "@angular/compiler": "^8.2.5",
+    "@angular/compiler-cli": "^8.2.6",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "rimraf": "^2.7.1",
+    "ts-node": "~7.0.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.4.5",
     "zone.js": "^0.9.1"
   },
   "engines": {
@@ -65,7 +72,6 @@
     "microsoft application insights",
     "ms app insights",
     "aspnet core app insights",
-    "trilon",
-    "trilon.io"
+    "app insights javascript sdk v2"
   ]
 }

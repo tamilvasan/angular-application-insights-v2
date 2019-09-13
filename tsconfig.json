@@ -13,8 +13,9 @@
     ],
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "moduleResolution": "node"
   },
   "files": [
     "index.ts"

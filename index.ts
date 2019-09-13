@@ -1,35 +1,37 @@
 import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
+import { ApplicationInsightsService } from './src/application-insights.service';
+import { ApplicationInsightsConfig } from './src/application-insights.config';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { AppInsightsConfig, AppInsightsService } from './src/app-insight.service';
-
-export * from './src/app-insight.service';
+export {ApplicationInsightsService} from './src/application-insights.service';
+export { ApplicationInsightsConfig } from './src/application-insights.config';
 
 @NgModule({
-  imports: [ CommonModule ],
+  imports: [RouterModule,CommonModule],
   declarations: [],
   exports: [],
-  providers: [ AppInsightsService ]
+  providers: [ ApplicationInsightsService ]
 })
 
 export class ApplicationInsightsModule {
 
   constructor (
     @Optional() @SkipSelf() parentModule: ApplicationInsightsModule,
-    appInsightsService: AppInsightsService
+    appInsightsService: ApplicationInsightsService
   ) {
     if (!parentModule) {
         appInsightsService.init();
     }
   }
-
-  static forRoot(config: AppInsightsConfig): ModuleWithProviders {
+  static forRoot(config: ApplicationInsightsConfig): ModuleWithProviders {
     return {
       ngModule: ApplicationInsightsModule,
       providers: [
-        { provide: AppInsightsConfig, useValue: config },
-        AppInsightsService
+        { provide: ApplicationInsightsConfig, useValue: config },
+        ApplicationInsightsService
       ]
     };
   }
+
 }
