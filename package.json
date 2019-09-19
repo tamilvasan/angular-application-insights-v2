@@ -1,7 +1,7 @@
 {
   "name": "angular-application-insights-v2",
   "description": "Angular implementation for Microsoft Azure Application Insights Javascript SDK V2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "lint": "tslint -p tsconfig.json",
     "clean": "rimraf ./dist",

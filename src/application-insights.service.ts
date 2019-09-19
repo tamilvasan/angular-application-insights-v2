@@ -17,17 +17,17 @@ import { ApplicationInsightsConfig } from './application-insights.config'
 @Injectable()
 export class ApplicationInsightsService implements IAppInsights {
   private appInsights: ApplicationInsights;
-  constructor(private config: ApplicationInsightsConfig,private router:Router) {
+  constructor(private config: ApplicationInsightsConfig) {
     this.appInsights = new ApplicationInsights({
       config: <any>config
     });
   }
 
-  init(): void {
+  init(router:Router): void {
     if (this.config.instrumentationKey) {
       try {
         this.appInsights.loadAppInsights();
-        this.router.events.subscribe((event:any) => {
+        router.events.subscribe((event:any) => {
           if(event instanceof ResolveEnd){
            const activatedComponent = this.getActivatedComponent(event.state.root);
             if (activatedComponent) {

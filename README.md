@@ -26,6 +26,7 @@ Now add ApplicationInsightsModule to your Angular Root `AppModule`:
 * Import the Application Insights module and the service provider
 * Add the Module to your imports
 * Add ApplicationInsightsService to your providers list
+* Initialize the Application Insights Service inside app root module constructor
 
 ```typescript
 // 1) Import the Application Insights module and the service provider
@@ -43,7 +44,12 @@ import { ApplicationInsightsModule, ApplicationInsightsService } from 'angular-a
      ApplicationInsightsService
   ]
 })
-export class AppRootModule { }
+export class AppRootModule { 
+  // 4) Initialize the Application Insights Service inside app root module constructor
+  constructor(applicationInsightsService:ApplicationInsightsService,router:Router){
+    applicationInsightsService.init(router);
+  }
+}
 ```
 ## How to track the page view?
 This library automatically track the initial request of a page. If you want to additionally track page requests then you can use the 'trackPageView' function from ApApplicationInsightsService.
